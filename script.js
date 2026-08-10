@@ -1,13 +1,28 @@
-// problem-1
-function studentIntroduction(student) {
-    if (
-        typeof student != "object" ||
-        !("name" in student) ||
-        !("age" in student) ||
-        !("course" in student)
-    ) {
-        return "Invalid";
-    }
+// problem-2
+let numbers = [10, 25, 30, 7, 40];
 
-    return `My name is ${student.name}. I am ${student.age} years old. I am learning ${student.course}.`;
+let result = numbers.filter(function (num) {
+    return num <= 20;
+});
+
+console.log(result);
+
+function sum(num) {
+    return num <= 20;
+}
+
+const sum = (num) => {
+    return num < 20;
+};
+
+(num) => {
+    return num < 20;
+};
+
+const filt = num.filter((num) => {
+    return num < 10;
+});
+
+function filterActiveUsers(users) {
+    let result = users.filter((user) => {});
 }
