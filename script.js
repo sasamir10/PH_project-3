@@ -1,28 +1,27 @@
-// problem-2
-let numbers = [10, 25, 30, 7, 40];
+// problem-5
 
-let result = numbers.filter(function (num) {
-    return num <= 20;
-});
+function generateLeaderboard(students) {
+    if (!Array.isArray(students) || students.length === 0) {
+        return "Invalid";
+    }
 
-console.log(result);
+    for (let i of students) {
+        if (!("name" in i) || !("score" in i)) {
+            return "Invalid";
+        }
 
-function sum(num) {
-    return num <= 20;
-}
+        if (typeof i.score !== "number") {
+            return "Invalid";
+        }
+    }
 
-const sum = (num) => {
-    return num < 20;
-};
+    const qualified = students.filter((student) => {
+        return student.score >= 70;
+    });
 
-(num) => {
-    return num < 20;
-};
+    const names = qualified.map(({ name }) => {
+        return name.toUpperCase();
+    });
 
-const filt = num.filter((num) => {
-    return num < 10;
-});
-
-function filterActiveUsers(users) {
-    let result = users.filter((user) => {});
+    return names.slice(0, 3);
 }
